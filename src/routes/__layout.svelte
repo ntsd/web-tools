@@ -5,41 +5,16 @@
 
 <Header />
 
-<main>
+<main class="min-h-screen w-full p-2 -mt-20 mx-auto pt-28 max-w-5xl">
 	<slot />
 </main>
 
-<footer>
-	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+<footer class="text-center">
+	<div class="inline-block">
+		Made by
+		<a href="https://ntsd.dev" rel="noopener noreferrer" target="_blank">ntsd</a>
+	</div>
 </footer>
 
 <style>
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 1024px;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 40px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 40px 0;
-		}
-	}
 </style>
