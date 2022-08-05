@@ -1,5 +1,6 @@
 <script context="module">
 	import { browser, dev } from '$app/env';
+	import copy from '$lib/util/copy';
 
 	// we don't need any JS on this page, though we'll load
 	// it in dev so that we get hot module replacement...
@@ -14,17 +15,26 @@
 	export const prerender = true;
 </script>
 
+<script>
+	let uuidv4 = "";
+
+	function generateUUIDv4 () {
+		uuidv4 = crypto.randomUUID();
+	}
+</script>
+
 <svelte:head>
-	<title>About</title>
-	<meta name="description" content="About this app" />
+	<title>Generate UUID</title>
+	<meta name="description" content="Generate UUID" />
 </svelte:head>
 
 <div>
-	<h1>About this app</h1>
-
-	<p>
-		An open source online web tools for developers.
-	</p>
+	<div>
+		UUID Version 4 
+		<button on:click={generateUUIDv4}>generate</button>
+		<input bind:value={uuidv4}>
+		<button on:click={copy(uuidv4)}>copy</button>
+	</div>
 </div>
 
 <style>
